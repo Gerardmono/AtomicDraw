@@ -2,7 +2,7 @@
 <html>
 <head>
 	<meta charset="utf-8"/>
-	<title>Sistema Administrador</title>
+	<title>Atomic Draw</title>
 	<link rel="stylesheet" type="text/css" href="<?=base_url?>assets/css/styles.css"/>
 </head>
 <body>
@@ -10,12 +10,12 @@
 	<header id="header">
 		<!--Logo-->
 		<div id="logo-img">
-			<img src="<?=base_url?>Images/sz9tYGzI.png">
+			<img src="<?=base_url?>Images/logo.png">
 		</div>
 		<div id="logo">
 			
 			<a href="<?=base_url?>">
-				SpeedyBus
+				AtomicDraw
 			</a>
 		</div>
 

@@ -1,0 +1,96 @@
+/* FUENTES */
+@font-face{
+    font-family:"fajala";
+    src: url(../fonts/Malvie.otf) format('truetype');
+    font-weight: normal;
+    font-style: normal;
+}
+
+@font-face{
+    font-family: "titles";
+    src: url(../fonts/fuente.ttf) format('truetype');
+    font-weight: normal;
+    font-style: normal;
+}
+
+/*GENERALES*/
+*{
+    margin: 0px;
+    padding: 0px;
+    font-family: sans-serif,Helvetica,Arial;
+    text-decoration: none;
+}
+
+.clearfix{
+    clear: both;
+    float: none;
+}
+
+body{
+    background: url(../img/fondo.png) #F4F4F4;
+}
+
+/*LOGO HEADER*/
+#logo-img img{
+    width: 165px;
+    height: 105px;
+    margin-top: 5px;
+    float: left;
+}
+
+/*LOGO*/
+#logo{
+    float: left;
+    width: 540px;
+    height: 110px;
+}
+
+#logo a{
+    font-family: "fajala",Helvetica ;
+    font-size: 40px;
+    letter-spacing: 2PX;
+    color: #f3e113;
+    text-shadow: 0px 0px 0px black,1px 1px 0px black,2px 2px 0px black;
+    transition: all 500ms;
+    line-height: 90px;
+    margin-left: 10px;
+}
+
+#logo a:hover{
+    cursor: pointer;
+    text-shadow: 0px 0px 0px black, -1px -1px 0px black, -2px -2px 0px black;
+}
+
+/*MENU*/
+#menu{
+    clear: both;
+    width: 100%;
+    height: 45px;
+    background: linear-gradient(to bottom,#f9f9f9 0%, #e9e9e9 100%);
+    border: 1px solid #C9C9C9;
+    border-radius: 8px;
+    box-shadow: 0px 1px 1px #ccc;
+    overflow: hidden;
+}
+
+#menu ul{
+    list-style: none;
+}
+
+#menu ul li{
+    float: left;
+    line-height: 44px;
+    border-right: 1px solid #D6D6D6;
+}
+
+#menu ul li a{
+    display: block;
+    padding-left: 10px;
+    padding-right: 10px;
+    font-size: 15px;
+    color: #838282;
+}
+
+#menu ul li a:hover{
+    background: linear-gradient(to bottom,#f2f2f2 0%, #dad9d4 100%);
+}
