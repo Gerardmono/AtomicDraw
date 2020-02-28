@@ -5,8 +5,7 @@ require_once 'config/db.php';
 require_once 'config/parameters.php';
 require_once 'helpers/utils.php';
 require_once 'views/layout/header.php';
-//require_once 'views/layout/sidebar.php';
-
+require_once 'views/layout/sidebar.php';
 
 function show_error(){
 	$error = new errorController();

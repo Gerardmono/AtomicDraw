@@ -2,7 +2,7 @@
 
 #Activar rewrite
 RewriteEngine on
-ErrorDocument 404 http://localhost/master-php/proyecto-php-poo/error/
+ErrorDocument 404 http://localhost/AtomicDraw/error/
 #directorios
 RewriteCond %{SCRIPT_FILENAME} !-d
 #archivos

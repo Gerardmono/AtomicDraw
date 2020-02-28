@@ -5,5 +5,5 @@ if(!isset($_SESSION)){
 }
 
 if(!isset($_SESSION['usuario'])){
-    header("Location:".base_url.'OPrincipal/index');
+    header("Location:".base_url.'O_SuperOyente/index');
 }
