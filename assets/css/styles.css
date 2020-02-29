@@ -35,16 +35,16 @@
 }
 
 body{
-    background-image: url("../img/paven.png");
+    background-image: url("../img/webb.png");
 }
 
 a{
-    color: #529125;
+    color: #1d6dff;
     text-decoration: none;
 }
 
 a:visited{
-    color: #529125;
+    color: #1d6dff;
 }
 
 a:hover{
@@ -104,7 +104,7 @@ input[type="text"]:focus,
 input[type="email"]:focus,
 input[type="password"]:focus,
 select:focus{
-    border: 1px solid #70b231;
+    border: 1px solid #00def1;
     color: black;
 }
 
@@ -113,12 +113,12 @@ input[type="submit"],
 input[type="reset"],
 button{
     display: block;
-    border: 1px solid green;
+    border: 1px solid blue;
     border-radius: 2px;
     color: white;
     width: 60px;
     padding: 3px;
-    background-color: #70b231;
+    background-color: #0364dc;
     cursor: pointer;
 }
 
@@ -220,8 +220,8 @@ button:active{
 }
 
 #nav > ul > li:hover{
-    background-color: #70b231;
-    box-shadow: 0px 0px 4px green inset;
+    background-color: #0364dc;
+    box-shadow: 0px 0px 4px blue inset;
 }
 
 /*MENU DESPLEGABLE DROPDOWN*/

@@ -23,22 +23,22 @@
     <nav id="nav">
         <ul>
             <li>
-                <a href="index.html">Inicio</a>
+                <a href="<?=base_url?>">Inicio</a>
             </li>
             <li>
-                <a href="index.html">Contenido</a>
+                <a href="index.html">Entorno Desarrollo UI´s</a>
             </li>
             <li>
-                <a href="index.html">Requerimientos</a>
+                <a href="index.html">Biblioteca</a>
             </li>
             <li>
-                <a href="index.html">Lenguajes</a>
+                <a href="index.html">Interfaces De Usuario</a>
                 <ul>
                     <li>
-                        <a href="index.html">HTML</a>
+                        <a href="index.html">Personales</a>
                     </li>
                     <li>
-                        <a href="index.html">CCS</a>
+                        <a href="index.html">Atomic Draw</a>
                     </li>
                 </ul>
             </li>
@@ -58,9 +58,6 @@
             </li>
             <li>
                 <a href="index.html">Proyectos</a>
-            </li>
-            <li>
-                <a href="index.html">El instructor</a>
             </li>
             <li>
                 <a href="index.html">Reseñas</a>

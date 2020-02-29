@@ -5,7 +5,7 @@
                     <img class="stickerOne" src="<?=base_url?>assets/img/scotch.png" alt="Pegatina"/>
                     <img class="stickerTwo" src="<?=base_url?>assets/img/scotch.png" alt="Pegatina"/>
                 </span>
-                <h2 class="titulo">Noticias de front-end</h2>
+                <h2 class="titulo">Noticias de Atomic Draw</h2>
                 <article class="article">
                     <span class="icon">a</span>
                     <p>
@@ -48,7 +48,7 @@
                     <img class="stickerOne" src="<?=base_url?>assets/img/scotch.png" alt="Pegatina"/>
                     <img class="stickerTwo" src="<?=base_url?>assets/img/scotch.png" alt="Pegatina"/>
                 </span>
-                <h2 class="titulo red">Noticias de back-end</h2>
+                <h2 class="titulo red">Noticias del entorno de desarrollo</h2>
                 <article class="article">
                     <span class="icon">a</span>
                     <p>
