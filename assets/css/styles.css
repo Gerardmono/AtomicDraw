@@ -438,6 +438,10 @@ button:active{
     margin-left: 20px;
 }
 
+#submits{
+    padding-left: 90px;
+}
+
 #label-form{
     font-size: 17px;
     font-family: sans-serif,Arial, Helvetica;
@@ -449,5 +453,5 @@ button:active{
 #submit-form{
     margin: 0px auto;
     float: left;
-    margin-left: 10px;
+    margin-left: 15px;
 }

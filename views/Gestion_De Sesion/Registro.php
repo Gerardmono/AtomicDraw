@@ -29,9 +29,10 @@
 
                         <label id="label-form" for="fotoP">Foto De Perfil : </label>
                         <input id="input-form" type="file" name="fotoP"/>
-
-                        <input id="submit-form" type="submit" value="Enviar">
-                        <input id="submit-form" type="reset" value="Limpiar">
+                        <div id="submits">
+                            <input id="submit-form" type="submit" value="Enviar">
+                            <input id="submit-form" type="reset" value="Limpiar">
+                        </div>
                     </form>
                 </center>                
             </section>
