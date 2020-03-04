@@ -1,4 +1,6 @@
 <?php
+	require_once 'controllers/O_Sesion.php';
+
     class O_SuperOyente{
         function __construct(){
 
@@ -14,15 +16,24 @@
 
 		public function registroUsuario(){
 			if (isset($_POST)) {
-				$nombre = isset($_POST['nombre']) ? $_POST['nombre'] : false;
-				$apellidoP = isset($_POST['apellidop']) ? $_POST['apellidop'] : false; 
-				$apellidoM = isset($_POST['apellidom']) ? $_POST['apellidom'] : false;
-				$email = isset($_POST['email']) ? $_POST['email'] : false; 
-				$password = isset($_POST['password']) ? $_POST['password'] : false;
-				//SI SE HIZO EL PUSH XD
+
+				// Ignora esto, intentaba algunas soluciones que lei en blogs
+				// var_dump( headers_sent($file, $line) );
+				// var_dump($file);
+				// var_dump($line);
+				// var_dump(headers_list());
+				// //header_remove();
+				// var_dump( headers_sent($file, $line) );
+				// var_dump($file);
+				// var_dump($line);
+				// var_dump(headers_list());
+				// //header_remove ();
+
+				//header("Location:".base_url.'O_Sesion/registroUsuario');
+				header("Location:".base_url.'O_SuperOyente/registro');
+				//require_once 'controllers/O_Sesion.php';
 			}else{	
 				$_SESSION['register'] = "failed";			
 			} 
 		}
     }
-?>

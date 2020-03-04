@@ -25,7 +25,7 @@
                         <input id="input-form" type="password" name="paswword"/>
 
                         <label id="label-form" for="password">Confirma Contraseña : </label>
-                        <input id="input-form" type="password" name="paswword"/>
+                        <input id="input-form" type="passwordConfirm" name="paswwordConfirm"/>
 
                         <label id="label-form" for="fotoP">Foto De Perfil : </label>
                         <input id="input-form" type="file" name="fotoP"/>
