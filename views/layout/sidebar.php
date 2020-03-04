@@ -14,9 +14,8 @@
 
                     <input type="submit" value="Entrar"/>
                 </form>
-                <a href="#">Zona de alumnos</a>
-                <a href="#">Zona del profesor</a>
-                <a href="#">Acceso a calificaciones</a>
+                <a href="<?=base_url?>O_SuperOyente/registro">Registrate en Atomic Draw</a>
+                <a href="#">¿Olvidaste  tu contraseña?</a>
             </div>
 
             <div class="widget" id="login">
