@@ -262,7 +262,7 @@ button:active{
 #content {
     font-family: sans-serif, Arial, Helvetica;
     width: 1250px;
-    min-height: 1100px;
+    min-height: auto;
     margin: 0px auto;
 }
 
