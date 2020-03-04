@@ -43,16 +43,19 @@
                 </ul>
             </li>
             <li>
-                <a href="index.html">Frameworks</a>
+                <a href="index.html">Gestion De Noticias</a>
                 <ul>
                     <li>
-                        <a href="index.html">LESS</a>
+                        <a href="index.html">Publicar</a>
                     </li>
                     <li>
-                        <a href="index.html">SASS</a>
+                        <a href="index.html">Modificar</a>
                     </li>
                     <li>
-                        <a href="index.html">Bootstrap 4</a>
+                        <a href="index.html">Eliminar</a>
+                    </li>
+                    <li>
+                        <a href="index.html">Consultar</a>
                     </li>
                 </ul>
             </li>
