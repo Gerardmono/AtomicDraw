@@ -19,6 +19,7 @@
 				$apellidoM = isset($_POST['apellidom']) ? $_POST['apellidom'] : false;
 				$email = isset($_POST['email']) ? $_POST['email'] : false; 
 				$password = isset($_POST['password']) ? $_POST['password'] : false;
+				//SI SE HIZO EL PUSH XD
 			}else{	
 				$_SESSION['register'] = "failed";			
 			} 
