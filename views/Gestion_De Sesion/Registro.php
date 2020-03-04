@@ -8,7 +8,7 @@
                 <h2 class="titulo blue">Registro</h2>
                 <br/>
                 <center>
-                    <form id="form-register" action="#">
+                    <form id="form-register" action="<?=base_url?>O_SuperOyente/registroUsuario" method="POST">
                         <label id="label-form" for="nombre">Nombre: </label>
                         <input id="input-form" type="text" name="nombre"/>
                         
