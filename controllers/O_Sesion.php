@@ -4,43 +4,76 @@
             
 		}
 
-        public function registroUsuario(){
+        public function registrarUsuario(){
+			
+			if( isset($_SESSION['nombre']) && isset($_SESSION['apellidoP'])
+				&& isset($_SESSION['apellidoM']) && isset($_SESSION['email'])
+				&& isset($_SESSION['password']) && isset($_SESSION['passwordConfirm']) ){
+
+				$nombre= $_SESSION['nombre'];
+				$apellidoP= $_SESSION['apellidoP'];
+				$apellidoM= $_SESSION['apellidoM'];
+				$email= $_SESSION['email'];
+
+				$password= $_SESSION['password'];
+				$passwordConfirm= $_SESSION['passwordConfirm'];
 
 
-
-            var_dump($_POST);
-            die();
-
-            $nombre = isset($_POST['nombre']) ? $_POST['nombre'] : false;
-				$apellidoP = isset($_POST['apellidoP']) ? $_POST['apellidoP'] : false; 
-				$apellidoM = isset($_POST['apellidoM']) ? $_POST['apellidoM'] : false;
-				$email = isset($_POST['email']) ? $_POST['email'] : false; 
-
-				$password = isset($_POST['password']) ? $_POST['password'] : false;
-				$passwordConfirm = isset($_POST['passwordConfirm']) ? $_POST['passwordConfirm'] : false;
+				if( !empty($nombre) && !is_numeric($nombre) && !preg_match("/[0-9]/", $nombre) ){
+                    $nombre_validado = true;
+                }else{
+                    $nombre_validado = false;
+                    $_SESSION['register'] = "failed";
+				}
 				
-				if (isset($_FILES['fotoP'])) {
-					$file = $_FILES['fotoP'];
-					$filename = $file['name'];
-					$mimetype = $file['type'];
-					/*
-					Muestra todos los elementos del array objeto de $_FILES
-					var_dump($file); die();
-					*/
-					if ($mimetype == "image/jpg" || $mimetype == 'image/jpeg' || $mimetype == 'image/png' || $mimetype == 'image/gif') {
+				if( !empty($apellidoP) && !is_numeric($apellidoP) && !preg_match("/[0-9]/", $apellidoP) ){
+                    $apellidop_validado = true;
+                }else{
+                    $apellidop_validado = false;
+                    $_SESSION['register'] = "failed";
+				}
+				
+				if( !empty($apellidoM) && !is_numeric($apellidoM) && !preg_match("/[0-9]/", $apellidoM) ){
+                    $apellidom_validado = true;
+                }else{
+                    $apellidom_validado = false;
+                    $_SESSION['register'] = "failed";
+				}
+				
+				if( !empty($email) && filter_var($email, FILTER_VALIDATE_EMAIL)){
+                    $email_validado = true;
+                }else{
+                    $email_validado = false;
+                    $_SESSION['register'] = "failed";
+				}
+				
+				if( !empty($password)){
+                    $password_validado = true;
+                }else{
+                    $password_validado = false;
+                    $_SESSION['register'] = "failed";
+				}
+				
+				if( !empty($passwordConfirm)){
+                    $passwordConfirm_validado = true;
+                }else{
+                    $passwordConfirm_validado = false;
+                    $_SESSION['register'] = "failed";
+				}
+				
+				if($password != $passwordConfirm){
+					$_SESSION['register'] = "failed";
+				}else if( $nombre_validado && $apellidop_validado && $apellidom_validado 
+					&& $email_validado && $password_validado && $passwordConfirm_validado ){			
+					
+					$password_segura= password_hash($password, PASSWORD_BCRYPT, ['cost'=>4]);
+				}
 
-						//Esto significa que esta creando un directorio recursivamente 
-						if (!is_dir('uploads')) {
-							mkdir('uploads/images', 0777, true);
-						}
-						//$producto->setImagen($filename); 
-						move_uploaded_file($file['tmp_name'], 'uploads/images/'.$filename);
+			}else{
+				//Registro fallido, aun esta pendiente
+				$_SESSION['register'] = "failed";
+			}
 
-					}
-                }
-                
-                //header("Location:".base_url.'O_Sesio/inicio');
-                //require_once 'views/Gestion_De Sesion/Registro.php';
         }
 
     }
