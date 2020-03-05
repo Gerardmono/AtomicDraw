@@ -10,14 +10,11 @@
 			require_once 'views/Gestion_De Sesion/Principal.php';
 		}
 
-		public function registro(){
+		public function despliegaUIRegistro(){
 			require_once 'views/Gestion_De Sesion/Registro.php';		
 		}
 
 		public function empiezaRegistro(){
-			echo("LLEGO AQUI");
-			var_dump($_POST);
-			die();
 
 			if( isset($_POST) ){
 				$_SESSION['nombre'] = isset($_POST['nombre']) ? $_POST['nombre'] : false;
@@ -46,10 +43,7 @@
 					$_SESSION['file']= false;
 				}
 
-				var_dump($_SESSION);
-				die();
-
-				//header("Location:".base_url.'O_Sesion/registrarUsuario');
+				header("Location:".base_url.'O_Sesion/registrarUsuario');
 			}else{
 				//No llego POST, aun esta pendiente
 				$_SESSION['register'] = "failed";

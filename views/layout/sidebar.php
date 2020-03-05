@@ -14,7 +14,7 @@
 
                     <input type="submit" value="Entrar"/>
                 </form>
-                <a href="<?=base_url?>O_SuperOyente/registro">Registrate en Atomic Draw</a>
+                <a href="<?=base_url?>O_SuperOyente/despliegaUIRegistro">Registrate en Atomic Draw</a>
                 <a href="#">¿Olvidaste  tu contraseña?</a>
             </div>
 
