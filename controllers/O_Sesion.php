@@ -1,14 +1,19 @@
 <?php
-	require_once '../models/usuario/GestorAutenticacion.php';
+	require_once 'models/usuario/GestorAutenticacion.php';
+
     class O_Sesion{
         function __construct(){
             
 		}
 
         public function registrarUsuario(){
+			echo("LLEGO AQUI");
+			die();
+			var_dump($_SESSION);
 			
 			if( isset($_SESSION['nombre']) && isset($_SESSION['apellidoP'])
-				&& isset($_SESSION['apellidoM']) && isset($_SESSION['email'])
+				//&& isset($_SESSION['apellidoM']) && isset($_SESSION['email'])
+				&& isset($_SESSION['email'])
 				&& isset($_SESSION['password']) && isset($_SESSION['passwordConfirm']) ){
 			
 				$filename = isset( $_SESSION[$_SESSION['file']['name']] ) ? $_SESSION[$_SESSION['file']['name']] : false;
@@ -66,12 +71,15 @@
 				
 				if($password != $passwordConfirm){
 					$_SESSION['register'] = "failed";
-				}else if( $nombre_validado && $apellidop_validado && $apellidom_validado 
+				}else if( $nombre_validado && $apellidop_validado //&& $apellidom_validado 
 					&& $email_validado && $password_validado && $passwordConfirm_validado ){			
 					
 					$password_segura= password_hash($password, PASSWORD_BCRYPT, ['cost'=>4]);
 
-					$gestorAutenticacion= new GestorAutenticacion($nombre, $apellidoP, $apellidoM, $email, $password_segura, $filename);
+					$gestorAutenticacion= new GestorAutenticacion();
+					echo("LLEGO");
+					die();
+					$gestorAutenticacion->guardarRegistro($nombre, $apellidoP, $apellidoM, $email, $password_segura, $filename);
 				}
 
 			}else{
