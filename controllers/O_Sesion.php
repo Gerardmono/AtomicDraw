@@ -2,7 +2,7 @@
     class O_Sesion{
         function __construct(){
             
-        }
+		}
 
         public function registroUsuario(){
 

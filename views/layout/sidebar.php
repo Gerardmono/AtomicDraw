@@ -20,7 +20,7 @@
 
             <div class="widget" id="login">
                 <h3 class="blue">Aula virtual 1</h3>
-                <form action="<?=base_url?>">
+                <form action="#">
                     <label>Nombre de usuario:</label>
                     <input type="text"/>
 
@@ -33,7 +33,7 @@
 
             <div class="widget" id="login">
                 <h3 class="red">Aula virtual 2</h3>
-                <form action="<?=base_url?>">
+                <form action="#">
                     <label>Nombre de usuario:</label>
                     <input type="text"/>
 

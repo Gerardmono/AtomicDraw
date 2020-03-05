@@ -1,5 +1,4 @@
 <!DOCTYPE html>
-<!--<?=base_url?>-->
 <html lang="es">
 <head>
     <meta charset="UTF-8"/>

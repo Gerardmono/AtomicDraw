@@ -15,25 +15,17 @@
 		}
 
 		public function registroUsuario(){
-			if (isset($_POST)) {
-
-				// Ignora esto, intentaba algunas soluciones que lei en blogs
-				// var_dump( headers_sent($file, $line) );
-				// var_dump($file);
-				// var_dump($line);
-				// var_dump(headers_list());
-				// //header_remove();
-				// var_dump( headers_sent($file, $line) );
-				// var_dump($file);
-				// var_dump($line);
-				// var_dump(headers_list());
-				// //header_remove ();
-
+			if (isset($_POST)) {	
+				var_dump($_POST);
+		
 				//header("Location:".base_url.'O_Sesion/registroUsuario');
-				header("Location:".base_url.'O_SuperOyente/registro');
-				//require_once 'controllers/O_Sesion.php';
+				//require_once 'controllers/O_Sesion/registroUsuario';
+				header("Location:".base_url.'O_Sesion/registroUsuario');
+
+
 			}else{	
 				$_SESSION['register'] = "failed";			
-			} 
+			}
 		}
-    }
+	}
+?>

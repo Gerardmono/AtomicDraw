@@ -1,5 +1,6 @@
-<!--Inicio De Las Secciones-->
-<div id="sections">
+        <?php require_once 'views/layout/sidebar.php';?>
+        <!--Inicio De Las Secciones-->
+        <div id="sections">
             <section id="frontend">
                 <span class="stickers">
                     <img class="stickerOne" src="<?=base_url?>assets/img/scotch.png" alt="Pegatina"/>
