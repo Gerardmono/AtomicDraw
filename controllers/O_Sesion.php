@@ -1,4 +1,5 @@
 <?php
+	require_once '../models/usuario/GestorAutenticacion.php';
     class O_Sesion{
         function __construct(){
             
@@ -9,6 +10,8 @@
 			if( isset($_SESSION['nombre']) && isset($_SESSION['apellidoP'])
 				&& isset($_SESSION['apellidoM']) && isset($_SESSION['email'])
 				&& isset($_SESSION['password']) && isset($_SESSION['passwordConfirm']) ){
+			
+				$filename = isset( $_SESSION[$_SESSION['file']['name']] ) ? $_SESSION[$_SESSION['file']['name']] : false;
 
 				$nombre= $_SESSION['nombre'];
 				$apellidoP= $_SESSION['apellidoP'];
@@ -67,6 +70,8 @@
 					&& $email_validado && $password_validado && $passwordConfirm_validado ){			
 					
 					$password_segura= password_hash($password, PASSWORD_BCRYPT, ['cost'=>4]);
+
+					$gestorAutenticacion= new GestorAutenticacion($nombre, $apellidoP, $apellidoM, $email, $password_segura, $filename);
 				}
 
 			}else{

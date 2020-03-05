@@ -8,13 +8,13 @@
 			//$this->db= Database::connect();
 		}
 
-		public function guardarRegistro($nombre, $apellidoP, $apellidoM, $email, $password) {
+		public function guardarRegistro($nombre, $apellidoP, $apellidoM, $email, $password_segura, $filename) {
 			
 			$usuario  = new Usuario();
-			$usuario->inicializar($nombre, $apellidoP, $apellidoM, $email, $password);
+			$usuario->inicializarRegistro($nombre, $apellidoP, $apellidoM, $email, $password_segura, $filename);
 
+            //Conectar a la DB pendiente
 			$sql = "INSERT INTO usuarios VALUES (NULL, '{$usuario->getNombre()}', '{$usuario->getApellidoP()}', '{$usuario->getApellidoM()}', '{$usuario->getEmail()}', '{$usuario->getPassword()}', 2); ";
-
 			$save = $this->db->query($sql);
 
 			$result = false;

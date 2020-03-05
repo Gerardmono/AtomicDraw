@@ -8,8 +8,21 @@
         private $password;
         private $imagen;
 
-        function __construct($id,$nombre,$apellidoP,$apellidoM,$email,$password,$imagen){
-            $this->id=$id;
+        // function __construct($id,$nombre,$apellidoP,$apellidoM,$email,$password,$imagen){
+        //     $this->id=$id;
+        //     $this->nombre=$nombre;
+        //     $this->apellidoP=$apellidoP;
+        //     $this->apellidoM=$apellidoM;
+        //     $this->email=$email;
+        //     $this->password=$password;
+        //     $this->imagen=$imagen;
+        // }
+
+        function __construct(){
+
+        }
+
+        function inicializarRegistro($nombre, $apellidoP, $apellidoM, $email, $password, $imagen){        
             $this->nombre=$nombre;
             $this->apellidoP=$apellidoP;
             $this->apellidoM=$apellidoM;
