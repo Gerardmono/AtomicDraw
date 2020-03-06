@@ -7,22 +7,18 @@
 		}
 
         public function registrarUsuario(){
-			echo("LLEGO AQUI");
-			die();
-			var_dump($_SESSION);
-			
+
 			if( isset($_SESSION['nombre']) && isset($_SESSION['apellidoP'])
 				//&& isset($_SESSION['apellidoM']) && isset($_SESSION['email'])
 				&& isset($_SESSION['email'])
 				&& isset($_SESSION['password']) && isset($_SESSION['passwordConfirm']) ){
 			
-				$filename = isset( $_SESSION[$_SESSION['file']['name']] ) ? $_SESSION[$_SESSION['file']['name']] : false;
-
-				$nombre= $_SESSION['nombre'];
-				$apellidoP= $_SESSION['apellidoP'];
-				$apellidoM= $_SESSION['apellidoM'];
+				$filename = isset( $_SESSION['file']['name'] ) ? $_SESSION['file']['name'] : false;
+				$apellidoM = isset($_SESSION['apellidoM']) ? $_SESSION['apellidoM'] : false;
+				
+				$nombre= $_SESSION['nombre'];				
+				$apellidoP= $_SESSION['apellidoP'];				
 				$email= $_SESSION['email'];
-
 				$password= $_SESSION['password'];
 				$passwordConfirm= $_SESSION['passwordConfirm'];
 
@@ -41,11 +37,15 @@
                     $_SESSION['register'] = "failed";
 				}
 				
-				if( !empty($apellidoM) && !is_numeric($apellidoM) && !preg_match("/[0-9]/", $apellidoM) ){
+				if( !is_numeric($apellidoM) && !preg_match("/[0-9]/", $apellidoM) ){
                     $apellidom_validado = true;
-                }else{
+                }else{					
                     $apellidom_validado = false;
                     $_SESSION['register'] = "failed";
+				}
+
+				if( empty($apellidoM) ){
+					$apellidoM = false;
 				}
 				
 				if( !empty($email) && filter_var($email, FILTER_VALIDATE_EMAIL)){
@@ -71,20 +71,38 @@
 				
 				if($password != $passwordConfirm){
 					$_SESSION['register'] = "failed";
-				}else if( $nombre_validado && $apellidop_validado //&& $apellidom_validado 
+					//Contraseña incorrecta
+					echo("Contraseña incorrecta");
+					die();
+					
+				}else if( $nombre_validado && $apellidop_validado && $apellidom_validado 
 					&& $email_validado && $password_validado && $passwordConfirm_validado ){			
 					
 					$password_segura= password_hash($password, PASSWORD_BCRYPT, ['cost'=>4]);
 
 					$gestorAutenticacion= new GestorAutenticacion();
-					echo("LLEGO");
+					$result= $gestorAutenticacion->guardarRegistro($nombre, $apellidoP, $apellidoM, $email, $password_segura, $filename);
+
+					if ($result) {
+						// Registro realizado correctamente
+						$_SESSION['register'] = "complete";
+					}else{
+						// Registro Fallido
+						$_SESSION['register'] = "failed";
+					}
+
+				}else{
+					//Registro fallido, aun esta pendiente
+					$_SESSION['register'] = "failed";
+					echo("REGISTER FAILED 02");
 					die();
-					$gestorAutenticacion->guardarRegistro($nombre, $apellidoP, $apellidoM, $email, $password_segura, $filename);
 				}
 
 			}else{
 				//Registro fallido, aun esta pendiente
 				$_SESSION['register'] = "failed";
+				echo("REGISTER FAILED 01");
+				die();
 			}
 
         }
