@@ -47,6 +47,13 @@
 			}
 			return $result; 
 		}
+		
+		public function comprobarCredencial($email){
+			$sql= "SELECT * FROM usuarios WHERE correo='$email'";
+			$login= $this->proxy_usuarios->query($sql);
+			
+			return $login;
+		}
 
 
 

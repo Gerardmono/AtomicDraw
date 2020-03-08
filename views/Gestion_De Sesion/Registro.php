@@ -8,6 +8,13 @@
                 </span>
                 <h2 class="titulo blue">Registro</h2>
                 <br/>
+                <?php if (isset($_SESSION['register']) && $_SESSION['register'] == 'complete') : ?> 
+                    <strong class="alert_green">Registro completado correctamente</strong>
+                <?php elseif(isset($_SESSION['register']) && $_SESSION['register'] == 'failed'): ?>
+                    <strong class="alert_red">Registro fallido, introduce bien los datos</strong>
+                <?php endif; ?>
+                <?php Utils::deleteSession('register'); ?>
+                <br/>
                 <center>
                     <form id="form-register" action="<?=base_url?>O_SuperOyente/empiezaRegistro" method="POST" enctype="multipart/form-data">
                         <label id="label-form" for="nombre">Nombre: </label>

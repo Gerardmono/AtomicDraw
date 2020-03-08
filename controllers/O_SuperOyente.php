@@ -44,11 +44,26 @@
 				}
 
 				header("Location:".base_url.'O_Sesion/registrarUsuario');
-			}else{
-				//No llego POST, aun esta pendiente
+			}else{	
 				$_SESSION['register'] = "failed";
+				header("Location:".base_url.'O_SuperOyente/despliegaUIRegistro');
 			}
 		
+		}
+
+		public function empiezaLogin(){
+			if( isset($_POST) ){
+				$_SESSION['usuarioLogin'] = isset($_POST['usuario']) ? $_POST['usuario'] : false;
+				$_SESSION['passwordLogin'] = isset($_POST['password']) ? $_POST['password'] : false;
+
+				header("Location:".base_url.'O_Sesion/autenticarUsuario');
+			}else{
+				$_SESSION['login'] = "failed";
+			}
+		}
+
+		public function empiezaCerrarSesion(){
+			header("Location:".base_url.'O_Sesion/cerrarSesion');
 		}
 	}
 ?>

@@ -85,26 +85,74 @@
 
 					if ($result) {
 						// Registro realizado correctamente
+						Utils::borrarSesionesRegistro();
 						$_SESSION['register'] = "complete";
+						header("Location:".base_url.'O_SuperOyente/despliegaUIRegistro');
 					}else{
 						// Registro Fallido
+						Utils::borrarSesionesRegistro();
 						$_SESSION['register'] = "failed";
+						header("Location:".base_url.'O_SuperOyente/despliegaUIRegistro');
 					}
 
 				}else{
 					//Registro fallido, aun esta pendiente
+					Utils::borrarSesionesRegistro();
 					$_SESSION['register'] = "failed";
-					echo("REGISTER FAILED 02");
-					die();
+					header("Location:".base_url.'O_SuperOyente/despliegaUIRegistro');
 				}
 
 			}else{
 				//Registro fallido, aun esta pendiente
+				Utils::borrarSesionesRegistro();
 				$_SESSION['register'] = "failed";
-				echo("REGISTER FAILED 01");
-				die();
+				header("Location:".base_url.'O_SuperOyente/despliegaUIRegistro');
 			}
 
+		}
+		
+		public function autenticarUsuario(){
+			$email=trim($_SESSION['usuarioLogin']);
+			$password=$_SESSION['passwordLogin'];
+			
+			$gestorAutenticacionLogin = new GestorAutenticacion();
+			$numeroUsers= $gestorAutenticacionLogin->comprobarCredencial($email);
+
+			if ($numeroUsers && mysqli_num_rows($numeroUsers)==1){
+				$usuario= mysqli_fetch_assoc($numeroUsers);
+
+				//COMPROBAR LA PASSWORD / CIFRAR
+				$verify=password_verify($password,$usuario['password']);
+
+				if($verify){
+					//UTILIZAR UNA SESION PARA GUARDAR lOS DATOS DEL USUARIO LOGUEADO.
+					$_SESSION['usuario']=$usuario;
+					$_SESSION['login'] = "complete";
+
+				}else{
+					//SI ALGO FALLA ENVIAR UNA SESION CON EL FALLO.
+					//$_SESSION['error_login']="Login Incorrecto.";
+					$_SESSION['login'] = "failed";
+				}
+			}else{
+				//MENSAJE DE ERROR
+				//$_SESSION['error_login']="Login Incorrecto.!";
+				$_SESSION['login'] = "failed";
+			}
+
+			Utils::borrarSesionesLogin();
+
+			if($_SESSION['login'] == "failed"){
+                header("Location:".base_url);
+            }else{
+                header("Location:".base_url);
+                $_SESSION['login'] =null;
+            }
+		}
+
+		public function cerrarSesion(){
+            $_SESSION['usuario']=null;
+            header("Location:".base_url);
         }
 
     }

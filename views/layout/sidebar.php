@@ -3,31 +3,33 @@
         <!--Inicio De La Barra Lateral-->
         <aside id="aside">
 
+            <?php if(!isset( $_SESSION['usuario'] )) : ?>
             <div class="widget" id="login">
                 <h3>Entrar a la web</h3>
-                <form action="<?=base_url?>">
-                    <label>Usuario:</label>
-                    <input type="text"/>
+                <form action="<?=base_url?>O_SuperOyente/empiezaLogin" method="POST">
+                    <label for="usuario">Usuario:</label>
+                    <input type="text" name="usuario"/>
 
-                    <label>Contraseña:</label>
-                    <input type="password"/>
+                    <label for="password">Contraseña:</label>
+                    <input type="password" name="password"/>
 
                     <input type="submit" value="Entrar"/>
                 </form>
                 <a href="<?=base_url?>O_SuperOyente/despliegaUIRegistro">Registrate en Atomic Draw</a>
                 <a href="#">¿Olvidaste  tu contraseña?</a>
             </div>
+            <?php endif; ?>
 
             <div class="widget" id="login">
-                <h3 class="blue">Aula virtual 1</h3>
-                <form action="#">
+                <h3 class="blue">[Aula virtual 1]</h3>
+                <form action="<?=base_url?>O_SuperOyente/empiezaCerrarSesion" method="post">
                     <label>Nombre de usuario:</label>
                     <input type="text"/>
 
                     <label>Contraseña:</label>
                     <input type="password"/>
 
-                    <input type="submit" value="Entrar"/>
+                    <input type="submit" value="Cerrar sesion [Temporal]"/>
                 </form>
             </div>
 
