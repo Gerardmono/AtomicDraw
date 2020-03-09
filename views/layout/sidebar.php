@@ -20,20 +20,17 @@
             </div>
             <?php endif; ?>
 
+            <?php if(isset( $_SESSION['usuario'] )) : ?>        
             <div class="widget" id="login">
-                <h3 class="blue">[Aula virtual 1]</h3>
-                <form action="<?=base_url?>O_SuperOyente/empiezaCerrarSesion" method="post">
-                    <label>Nombre de usuario:</label>
-                    <input type="text"/>
-
-                    <label>Contraseña:</label>
-                    <input type="password"/>
-
-                    <input type="submit" value="Cerrar sesion [Temporal]"/>
+                <h3 class="blue"><?=$_SESSION['usuario']['nombre']?> <?=$_SESSION['usuario']['apellidop']?> <?= !empty($_SESSION['usuario']['apellidom']) ? $_SESSION['usuario']['apellidom'] : '';?></h3>
+                <form action="<?=base_url?>O_SuperOyente/empiezaCerrarSesion" method="post">                
+                    <img id="imagen-sesion" src="<?= !empty($_SESSION['usuario']['imagen']) ? base_url."/uploads/".$_SESSION['usuario']['imagen'] : base_url."uploads/images/default.png" ?>" alt="imagen-user">
+                    <input id="boton-cerrarsesion" type="submit" value="Cerrar sesion"/>
                 </form>
             </div>
+            <?php endif; ?>
 
-            <div class="widget" id="login">
+            <!-- <div class="widget" id="login">
                 <h3 class="red">Aula virtual 2</h3>
                 <form action="#">
                     <label>Nombre de usuario:</label>
@@ -44,7 +41,7 @@
 
                     <input type="submit" value="Entrar"/>
                 </form>
-            </div>
+            </div> -->
 
             <div class="widget" id="login">
                 <h3>Enlaces de interes</h3>
