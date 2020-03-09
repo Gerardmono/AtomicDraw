@@ -466,3 +466,14 @@ button:active{
     float: left;
     margin-left: 15px;
 }
+textarea{
+    max-width: 325px;
+    min-width: 325px;
+    display: block;
+    width: 325px;
+    margin-bottom: 20px;
+    margin-top: 5px;
+    border-radius: 2px;
+    height: 200px;
+    margin-left: 20px;
+}
