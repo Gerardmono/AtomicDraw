@@ -455,3 +455,12 @@ button:active{
     float: left;
     margin-left: 15px;
 }
+
+#imagen-sesion{
+    width: 100px;
+    margin-left: 40px;
+}
+
+#boton-cerrarsesion{
+    width: auto;    
+}
