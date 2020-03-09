@@ -30,7 +30,7 @@
             </div>
             <?php endif; ?>
 
-            <div class="widget" id="login">
+            <!-- <div class="widget" id="login">
                 <h3 class="red">Aula virtual 2</h3>
                 <form action="#">
                     <label>Nombre de usuario:</label>
@@ -41,7 +41,7 @@
 
                     <input type="submit" value="Entrar"/>
                 </form>
-            </div>
+            </div> -->
 
             <div class="widget" id="login">
                 <h3>Enlaces de interes</h3>
