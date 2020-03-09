@@ -45,7 +45,7 @@
                 <a href="index.html">Gestion De Noticias</a>
                 <ul>
                     <li>
-                        <a href="index.html">Publicar</a>
+                        <a href="<?=base_url?>O_SuperOyente/delegaNewNotice">Publicar</a>
                     </li>
                     <li>
                         <a href="index.html">Modificar</a>
