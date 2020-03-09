@@ -1,3 +1,4 @@
+<?php require_once 'views/layout/sidebar.php';?>
 <!--Inicio De Las Secciones-->
 <div id="sections">
             <section id="registro">
@@ -8,9 +9,18 @@
                 <h2 class="titulo blue">Nueva Noticia</h2>
                 <br/>
                 <center>
-                    <form id="form-register" action="<?=base_url?>O_SuperOyente/registroUsuario" method="POST">
-                        <label id="label-form" for="nombre">Nombre: </label>
-                        <input id="input-form" type="text" name="nombre"/>                       
+                    <form id="form-register" action="<?=base_url?>O_SuperOyente/beginNewNotice" method="POST">
+                        <label id="label-form" for="clasificacion">Clasificación: </label>
+                        <input id="input-form" type="text" name="clasificacion"/>
+
+                        <label id="label-form" for="titulo">Titulo: </label>
+                        <input id="input-form" type="text" name="titulo"/> 
+                        
+                        <label id="label-form" for="descripcion">Descripción: </label>
+                        <textarea name="descripcion" cols="30" rows="10"></textarea>
+
+                        <label id="label-form" for="fecha">Fecha: </label>
+                        <input id="input-form-date" type="date" name="fecha"/>                     
                 
                         <div id="submits">
                             <input id="submit-form" type="submit" value="Enviar">
