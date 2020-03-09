@@ -20,8 +20,7 @@
             </div>
             <?php endif; ?>
 
-            <?php if(isset( $_SESSION['usuario'] )) : ?>
-            <?php //var_dump($_SESSION['usuario']); die(); ?>
+            <?php if(isset( $_SESSION['usuario'] )) : ?>        
             <div class="widget" id="login">
                 <h3 class="blue"><?=$_SESSION['usuario']['nombre']?> <?=$_SESSION['usuario']['apellidop']?> <?= !empty($_SESSION['usuario']['apellidom']) ? $_SESSION['usuario']['apellidom'] : '';?></h3>
                 <form action="<?=base_url?>O_SuperOyente/empiezaCerrarSesion" method="post">                
