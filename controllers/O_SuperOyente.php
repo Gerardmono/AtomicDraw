@@ -14,6 +14,14 @@
 			require_once 'views/Gestion_De Sesion/Registro.php';		
 		}
 
+		public function despliegaGUICreacionUI(){
+			require_once 'views/Gestion_De_Biblioteca/Creacion_De_UI.php';		
+		}
+
+		public function delegaNewNotice(){
+			require_once 'views/Gestion_De_Contenido/Nueva_Noticia.php';
+		}
+
 		public function empiezaRegistro(){
 
 			if( isset($_POST) ){
@@ -64,6 +72,11 @@
 
 		public function empiezaCerrarSesion(){
 			header("Location:".base_url.'O_Sesion/cerrarSesion');
+		}
+
+		public function beginNewNotice(){
+			var_dump($_POST);
+			die();
 		}
 	}
 ?>
