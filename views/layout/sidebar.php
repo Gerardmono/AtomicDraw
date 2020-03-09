@@ -26,7 +26,7 @@
                     <label>Nombre de usuario:</label>
                     <input type="text"/>
 
-                    <label>Contraseña:</label>
+                    <label>Contraseñka:</label>
                     <input type="password"/>
 
                     <input type="submit" value="Cerrar sesion [Temporal]"/>
