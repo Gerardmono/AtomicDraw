@@ -479,8 +479,9 @@ textarea{
 }
 
 #imagen-sesion{
-    width: 100px;
-    margin-left: 40px;
+    width: 139px;
+    padding-left: 20px;
+    margin-bottom: 7px;
 }
 
 #boton-cerrarsesion{

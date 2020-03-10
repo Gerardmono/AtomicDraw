@@ -22,9 +22,10 @@
 
             <?php if(isset( $_SESSION['usuario'] )) : ?>        
             <div class="widget" id="login">
+            
                 <h3 class="blue"><?=$_SESSION['usuario']['nombre']?> <?=$_SESSION['usuario']['apellidop']?> <?= !empty($_SESSION['usuario']['apellidom']) ? $_SESSION['usuario']['apellidom'] : '';?></h3>
                 <form action="<?=base_url?>O_SuperOyente/empiezaCerrarSesion" method="post">                
-                    <img id="imagen-sesion" src="<?= !empty($_SESSION['usuario']['imagen']) ? base_url."/uploads/".$_SESSION['usuario']['imagen'] : base_url."uploads/images/default.png" ?>" alt="imagen-user">
+                    <img id="imagen-sesion" src="<?= !empty($_SESSION['usuario']['imagen']) ? base_url."uploads/images/".$_SESSION['usuario']['imagen'] : base_url."uploads/images/default.png" ?>" alt="imagen-user">
                     <input id="boton-cerrarsesion" type="submit" value="Cerrar sesion"/>
                 </form>
             </div>
