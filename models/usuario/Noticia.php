@@ -11,7 +11,7 @@
              $this->clasificacion=$clasificacion;
              $this->titulo=$titulo;
              $this->descripcion=$descripcion;
-             $this->$fecha=$fecha;
+             $this->fecha=$fecha;
         }
 
         public function getId(){

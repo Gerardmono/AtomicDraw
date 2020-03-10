@@ -1,4 +1,29 @@
 <?php require_once 'views/layout/sidebar.php';?>
+
+<?php if (isset($_SESSION['register']) && $_SESSION['register'] == 'complete') : ?> 
+    <script type="text/javascript">
+        Swal.fire({
+            position: 'center',
+            icon: 'success',
+            title: 'Noticia guardada correctamente!',
+            showConfirmButton: false,
+            timer: 2250
+        })
+    </script>
+<?php elseif(isset($_SESSION['register']) && $_SESSION['register'] == 'failed'): ?>
+    <script type="text/javascript">
+        Swal.fire({
+            position: 'center',
+            icon: 'error',
+            title: 'Registro fallido...',
+            text: 'Introduce bien los datos!',
+            showConfirmButton: false,
+            timer: 2250
+        })
+    </script>
+<?php endif; ?>
+<?php Utils::deleteSession('register'); ?>
+
 <!--Inicio De Las Secciones-->
 <div id="sections">
             <section id="registro">

@@ -10,11 +10,10 @@
         }
 
         public function saveNotice($id,$clasificacion,$titulo,$descripcion,$fecha){
-            $noticia= new Notice($id,$clasificacion,$titulo,$descripcion,$fecha);          
+            
+            $noticia= new Notice($id,$clasificacion,$titulo,$descripcion,$fecha); 
+            var_dump($noticia);         
             $sql = "INSERT INTO noticias VALUES (NULL, '{$noticia->getClasificacion()}', '{$noticia->getTitulo()}','{$noticia->getDescripcion()}', '{$noticia->getFecha()}'); ";
-            var_dump($sql);
-            die();
-
             $save = $this->proxy_noticias->query($sql);
 			$result = false;
 			if ($save) {

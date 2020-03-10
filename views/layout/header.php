@@ -5,8 +5,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Atomic Draw</title>
     <link rel="icon" type="image/x-icon" href="<?=base_url?>assets/img/favicon.ico"/>
-
     <link rel="stylesheet" type="text/css" href="<?=base_url?>assets/css/styles.css"/>
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@9"></script>
 
 </head>
 <body>
