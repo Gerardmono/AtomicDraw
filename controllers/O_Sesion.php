@@ -1,5 +1,7 @@
 <?php
-	require_once 'models/usuario/GestorAutenticacion.php';
+	//require_once 'models/usuario/GestorAutenticacion.php';
+	 require_once 'models/SuperGestor.php';
+	// require_once 'models';
 
     class O_Sesion{
         function __construct(){
@@ -13,8 +15,10 @@
 				&& isset($_SESSION['email'])
 				&& isset($_SESSION['password']) && isset($_SESSION['passwordConfirm']) ){
 			
-				$filename = isset( $_SESSION['file']['name'] ) ? $_SESSION['file']['name'] : false;
-				$apellidoM = isset($_SESSION['apellidoM']) ? $_SESSION['apellidoM'] : false;
+				// $filename = empty( $_SESSION['file']['name'] ) ? $_SESSION['file']['name'] : "NULL";
+				$filename = empty( $_SESSION['file']['name'] ) ? NULL : $_SESSION['file']['name'];
+				// $apellidoM = empty($_SESSION['apellidoM']) ? $_SESSION['apellidoM'] : "NULL";
+				$apellidoM = empty($_SESSION['apellidoM']) ? NULL : $_SESSION['apellidoM'];				
 				
 				$nombre= $_SESSION['nombre'];				
 				$apellidoP= $_SESSION['apellidoP'];				
@@ -71,17 +75,15 @@
 				
 				if($password != $passwordConfirm){
 					$_SESSION['register'] = "failed";
-					//Contraseña incorrecta
-					echo("Contraseña incorrecta");
-					die();
+					header("Location:".base_url.'O_SuperOyente/despliegaUIRegistro');
 					
 				}else if( $nombre_validado && $apellidop_validado && $apellidom_validado 
 					&& $email_validado && $password_validado && $passwordConfirm_validado ){			
 					
 					$password_segura= password_hash($password, PASSWORD_BCRYPT, ['cost'=>4]);
-
-					$gestorAutenticacion= new GestorAutenticacion();
-					$result= $gestorAutenticacion->guardarRegistro($nombre, $apellidoP, $apellidoM, $email, $password_segura, $filename);
+					
+					$superGestor= new SuperGestor();
+					$result= $superGestor->delegarGuardarRegistro($nombre, $apellidoP, $apellidoM, $email, $password_segura, $filename);			
 
 					if ($result) {
 						// Registro realizado correctamente
@@ -114,9 +116,9 @@
 		public function autenticarUsuario(){
 			$email=trim($_SESSION['usuarioLogin']);
 			$password=$_SESSION['passwordLogin'];
-			
-			$gestorAutenticacionLogin = new GestorAutenticacion();
-			$numeroUsers= $gestorAutenticacionLogin->comprobarCredencial($email);
+
+			$superGestor= new SuperGestor();
+			$numeroUsers= $superGestor->delegarAutenticacionLogin($email);			
 
 			if ($numeroUsers && mysqli_num_rows($numeroUsers)==1){
 				$usuario= mysqli_fetch_assoc($numeroUsers);

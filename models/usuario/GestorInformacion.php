@@ -1,6 +1,7 @@
 <?php
     require_once 'Noticia.php';
-    require_once 'services/conectores_DB/C_DB_Servidor/Proxy_Noticias.php';
+    //require_once 'services/conectores_DB/C_DB_Servidor/Proxy_Noticias.php';
+    include_once 'services/conectores_DB/C_DB_Servidor/Proxy_Noticias.php';
     
     class GestorInformacion{
         private $proxy_noticias;

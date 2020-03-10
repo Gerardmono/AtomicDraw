@@ -49,6 +49,26 @@ class Utils{
 		Utils::deleteSession('passwordLogin');
 	}
 
+	public static function validaNombre($nombre){
+		if( !empty($nombre) && !is_numeric($nombre) && !preg_match("/[0-9]/", $nombre) ){
+			$nombre_validado = true;
+		}else{
+			$nombre_validado = false;
+			$_SESSION['register'] = "failed";
+		}
+		return $nombre_validado;
+	}
+
+	public static function validarEmail($email){
+		if( !empty($email) && filter_var($email, FILTER_VALIDATE_EMAIL)){
+			$email_validado = true;
+		}else{
+			$email_validado = false;
+			$_SESSION['register'] = "failed";
+		}
+		return $email_validado;
+	}
+
 }
 
 ?>

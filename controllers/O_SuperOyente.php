@@ -1,5 +1,4 @@
 <?php
-	require_once 'controllers/O_Sesion.php';
 
     class O_SuperOyente{
         function __construct(){
