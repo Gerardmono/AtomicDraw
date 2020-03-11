@@ -1,0 +1,20 @@
+#frame {
+    min-width: 1200px;
+    height: 1500px;
+    background-image: url(../../Images/hip-square.png);
+    
+}
+.draggable {
+    padding: 10px;
+    position: absolute;
+    cursor: move;
+}
+.componentSelector {
+    cursor: pointer;
+}
+#addOptionField {
+    padding: 0!important;
+    font-size: 12px!important;
+    position: relative;
+    float: right;
+}
