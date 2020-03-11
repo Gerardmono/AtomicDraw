@@ -15,30 +15,15 @@
 			$usuario  = new Usuario();
 			$usuario->inicializarRegistro($nombre, $apellidoP, $apellidoM, $email, $password_segura, $filename);
 
+			// var_dump($usuario);
+			// die();
 
-			if($usuario->getApellidoM() == false && $usuario->getImagen() == false){			
-				// Query en donde no se introdujo el apellido materno y la imagen
-				$sql = "INSERT INTO usuarios VALUES (NULL, '{$usuario->getNombre()}', '{$usuario->getApellidoP()}'";
-				$sql.= ", NULL, '{$usuario->getEmail()}', '{$usuario->getPassword()}', NULL, 2); ";
-
+			// Query para guardar registro
+			$sql = "INSERT INTO usuarios VALUES (NULL, '{$usuario->getNombre()}', '{$usuario->getApellidoP()}'";
+			$sql.= ", '{$usuario->getApellidoM()}', '{$usuario->getEmail()}', '{$usuario->getPassword()}', '{$usuario->getImagen()}', 2); ";
 				
-			}else if($usuario->getApellidoM() == false){
-				// Query donde no se introdujo el apellido materno
-				$sql = "INSERT INTO usuarios VALUES (NULL, '{$usuario->getNombre()}', '{$usuario->getApellidoP()}'";
-				$sql.= ", NULL, '{$usuario->getEmail()}', '{$usuario->getPassword()}', '{$usuario->getImagen()}', 2); ";
-				
-			}else if($usuario->getImagen() == false){
-				// Query donde no se introdujo una foto de usuario
-				$sql = "INSERT INTO usuarios VALUES (NULL, '{$usuario->getNombre()}', '{$usuario->getApellidoP()}'";
-				$sql.= ", '{$usuario->getApellidoM()}', '{$usuario->getEmail()}', '{$usuario->getPassword()}', NULL, 2); ";
-				
-			}else{
-				// Query donde tenemos todos los datos
-				$sql = "INSERT INTO usuarios VALUES (NULL, '{$usuario->getNombre()}', '{$usuario->getApellidoP()}'";
-				$sql.= ", '{$usuario->getApellidoM()}', '{$usuario->getEmail()}', '{$usuario->getPassword()}', '{$usuario->getImagen()}', 2); ";
-
-			}
-					
+			// var_dump($sql);
+			// die();
 			$save = $this->proxy_usuarios->query($sql);
 
 			$result = false;

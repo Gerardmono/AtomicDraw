@@ -1,5 +1,4 @@
 <?php
-	require_once 'controllers/O_Sesion.php';
 
     class O_SuperOyente{
         function __construct(){
@@ -74,9 +73,19 @@
 			header("Location:".base_url.'O_Sesion/cerrarSesion');
 		}
 
-		public function beginNewNotice(){
-			var_dump($_POST);
-			die();
+		public function beginNewNotice(){	
+			if( isset($_POST) ){
+				$_SESSION['clasificacion'] = isset($_POST['clasificacion']) ? $_POST['clasificacion'] : false;
+				$_SESSION['titulo'] = isset($_POST['titulo']) ? $_POST['titulo'] : false; 
+				$_SESSION['descripcion'] = isset($_POST['descripcion']) ? $_POST['descripcion'] : false;
+				$_SESSION['fecha'] = isset($_POST['fecha']) ? $_POST['fecha'] : false;				
+				header("Location:".base_url.'O_Contenido/endsNewNotice');
+			}else{	
+				$_SESSION['register'] = "failed";
+				header("Location:".base_url.'O_SuperOyente/delegaNewNotice');
+			}
+
+
 		}
 	}
 ?>
