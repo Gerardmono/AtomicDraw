@@ -18,17 +18,27 @@
                 <div id="frame">
                 </div>
             </div>
-            <div class="col-2">
+            <div class="col-2" style="background-color: white">
                 <div class="row">
                     <strong>&nbsp;&nbsp;Componentes</strong>
                 </div>
 
-                <label for="" id="addTitulo" class="componentSelector">Titulo</label>&nbsp;&nbsp;&nbsp;
+                <img src="https://cdn.iconscout.com/icon/premium/png-256-thumb/title-title-tage-labal-sign-direction-3-53162.png" width="25px">
+                <label for="" id="addTitulo" class="componentSelector">Titulo</label><br>
+                <img src="https://www.pngfind.com/pngs/m/464-4648869_boton-png-transparent-png.png" width="25px">
                 <label for="" id="addBoton1" class="componentSelector">Boton</label><br>
-                <label for="" id="addImagen" class="componentSelector">Imagen</label>&nbsp;&nbsp;&nbsp;
+                <img src="https://lh3.googleusercontent.com/proxy/dymgpwnqQhwsAE7XGtFQk7helYYkBaR_N9FTc6f7FTRXZCwT9Lh-mosZ2aBQjMPGwM6z_9RDiDrd4DnrqoynbxOa0a-pPJvtXHDmPf2EwUuWeg" width="20px">
+                <label for="" id="addImagen" class="componentSelector">Imagen</label><br>
+                <img src="https://image.flaticon.com/icons/png/512/219/219176.png" width="20px">
                 <label for="" id="addParrafo" class="componentSelector" >Parrafo</label><br>
-                <label for="" id="addComboBox" class="componentSelector">ComboBox</label>&nbsp;&nbsp;&nbsp;
-
+                <img src="https://cdn.iconscout.com/icon/free/png-256/combobox-444615.png" width="20px">
+                <label for="" id="addComboBox" class="componentSelector">Select</label><br>
+                <img src="https://cdn2.iconfinder.com/data/icons/files-folders-line/100/rename-512.png" width="20px" style="transform: scaleX(-1);">
+                <label for="" id="addInputText" class="componentSelector">Campo de texto</label><br>
+                <img src="https://p7.hiclipart.com/preview/860/923/587/checkbox-check-mark-checklist-computer-icons-others.jpg" width="20px">
+                <label for="" id="addCheckBox" class="componentSelector">CheckBox</label><br>
+                <img src="https://p7.hiclipart.com/preview/752/449/204/at-sign-computer-icons-clip-art-radio-button.jpg" width="15px">
+                <label for="" id="addRadioButton" class="componentSelector">Radio Button</label><br>
             </div>
         </div>
     </section>
@@ -65,7 +75,7 @@
                     </div>
                     <div class="form-group" id="contParagraph">
                         <label for="paragraph">Ingresa el texto que lleara el parrafo</label>
-                        <textarea id="paragraph" class="form-control" style="height: 50px"></textarea>
+                        <textarea id="paragraph" class="form-control" style="max-width: 100%"></textarea>
                     </div>
                     <div class="form-group" id="contNameGroup">
                         <label for="nameGroup">Ingresa el nombre del grupo</label>
@@ -99,5 +109,7 @@
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
     <script src="../workSpace.js"></script>
     <script src="../jquery.growl.js"></script>
+
+    <!-- https://lh3.googleusercontent.com/proxy/6VlCCY7OW81Q4tZ2SNiuxjhjEBLDovgXWk0X1STY8mTvOPs1FacsM0EJteqnU8Q9AQvfMDBw1XMUz_TEnQfumj7bMTde3v9WL33_O_Z-C2mDOKy1S5ar -->
 
 </html>
