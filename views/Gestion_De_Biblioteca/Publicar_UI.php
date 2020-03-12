@@ -5,7 +5,7 @@
         Swal.fire({
             position: 'center',
             icon: 'success',
-            title: 'Noticia guardada correctamente!',
+            title: 'Publicación creada correctamente.',
             showConfirmButton: false,
             timer: 2250
         })
@@ -15,7 +15,7 @@
         Swal.fire({
             position: 'center',
             icon: 'error',
-            title: 'Registro fallido...',
+            title: 'Fallo al crear la publicación.',
             text: 'Introduce bien los datos!',
             showConfirmButton: false,
             timer: 2250
@@ -31,24 +31,33 @@
                     <img class="stickerOne" src="<?=base_url?>assets/img/scotch.png" alt="Pegatina"/>
                     <img class="stickerTwo" src="<?=base_url?>assets/img/scotch.png" alt="Pegatina"/>
                 </span>
-                <h2 class="titulo blue">Nueva Noticia</h2>
+                <h2 class="titulo blue">Crear publicacion para Interfaz de usuario.</h2>
                 <br/>
                 <center>
                     <form id="form-register" action="<?=base_url?>O_SuperOyente/beginNewNotice" method="POST">
-                        <label id="label-form" for="clasificacion">Clasificación: </label>
-                        <input id="input-form" type="text" name="clasificacion"/>
+                        
+                        <label id="label-form" for="titulo">Nombre de la UI: </label>
+                        <input id="input-form" type="text" name="titulo"/>
 
-                        <label id="label-form" for="titulo">Titulo: </label>
-                        <input id="input-form" type="text" name="titulo"/> 
+                        <label id="label-form" for="precio">Precio: </label>
+                        <input id="input-form" type="number" name="precio"/>
+
+                        <label for="id-ui">Selecciona la UI a publicar:</label>
+                        <select id="select-ui" name="id-ui">
+                            <option value="UI_01">UI_01</option>
+                            <option value="UI_02">UI_02</option>
+                            <option value="UI_03">UI_03</option>
+                            <option value="UI_04">UI_04</option>
+                        </select>
                         
                         <label id="label-form" for="descripcion">Descripción: </label>
                         <textarea name="descripcion" cols="30" rows="10"></textarea>
-
-                        <label id="label-form" for="fecha">Fecha: </label>
-                        <input id="input-form-date" type="date" name="fecha"/>                     
+                        
+                        <label id="label-form" for="imagen">Imagen de la UI: </label>
+                        <input id="select-ui" type="file" name="imagen">
                 
                         <div id="submits">
-                            <input id="submit-form" type="submit" value="Enviar">
+                            <input id="submit-form" type="submit" value="Publicar">
                             <input id="submit-form" type="reset" value="Limpiar">
                         </div>
                     </form>
