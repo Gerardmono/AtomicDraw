@@ -27,6 +27,31 @@
             return $numeroUsers;
         }
 
+        public function delegarUpdateNotice(){
+            require_once 'usuario/GestorInformacion.php';
+            $gestor= new GestorInformacion();
+            $news= $gestor->updateNews();
+            return $news;
+        }
+
+        public function delegarDeleteNew($id){
+            require_once 'usuario/GestorInformacion.php';
+            $gestor= new GestorInformacion();
+            $result=$gestor->deleteNew($id);
+            return $result;
+        }
+
+        public function delegaGuardarPublicacion($titulo, $precio, $id_ui, $descripcion, $filename){
+            require_once 'biblioteca/GestorContenido.php';
+            require_once 'biblioteca/Publicacion.php';
+
+            $publicacionNueva= new Publicacion($titulo, $precio, $id_ui, $descripcion, $filename);
+
+            $gestorContenido= new GestorContenido();
+            $result= $gestorContenido->guardarPublicacion($publicacionNueva);
+            return $result;
+        }
+
     }
 
 ?>

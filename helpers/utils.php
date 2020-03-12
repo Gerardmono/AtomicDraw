@@ -1,5 +1,6 @@
 <?php
 
+
 class Utils{
 	//Metodo estaticos que no necesitan instanciar el objeto o crear objeto, solo llamar los metodos
 
@@ -37,6 +38,10 @@ class Utils{
 		Utils::deleteSession('passwordConfirm');
 	}
 
+	public static function borrarSesionId(){
+		utils::deleteSession('id');
+	}
+
 	public static function borrarSesionNotice(){
 		Utils::deleteSession('clasificacion');
 		Utils::deleteSession('titulo');
@@ -47,6 +52,14 @@ class Utils{
 	public static function borrarSesionesLogin(){
 		Utils::deleteSession('usuarioLogin');
 		Utils::deleteSession('passwordLogin');
+	}
+
+	public static function borrarSesionesPublicacion(){
+		Utils::deleteSession('file');
+		Utils::deleteSession('titulo');
+		Utils::deleteSession('id-ui');
+		Utils::deleteSession('descripcion');
+		Utils::deleteSession('precio');
 	}
 
 	public static function validaNombre($nombre){
@@ -67,6 +80,20 @@ class Utils{
 			$_SESSION['register'] = "failed";
 		}
 		return $email_validado;
+	}
+
+	public static function getNewsAtomic(){
+		require_once 'models/usuario/GestorInformacion.php';
+		$gestor= new GestorInformacion();
+		$news= $gestor->getSomeNewsAtomic();
+		return $news;
+	}
+
+	public static function getNewsEntorno(){
+		require_once 'models/usuario/GestorInformacion.php';
+		$gestor= new GestorInformacion();
+		$news= $gestor->getSomeNewsEntorno();
+		return $news;
 	}
 
 }

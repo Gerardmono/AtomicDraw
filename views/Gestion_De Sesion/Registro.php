@@ -7,14 +7,29 @@
                     <img class="stickerTwo" src="<?=base_url?>assets/img/scotch.png" alt="Pegatina"/>
                 </span>
                 <h2 class="titulo blue">Registro</h2>
-                <br/>
                 <?php if (isset($_SESSION['register']) && $_SESSION['register'] == 'complete') : ?> 
-                    <strong class="alert_green">Registro completado correctamente</strong>
+                    <script type="text/javascript">
+                        Swal.fire({
+                            position: 'center',
+                            icon: 'success',
+                            title: 'Registro completado correctamente!',
+                            showConfirmButton: false,
+                            timer: 2250
+                        })
+                    </script>
                 <?php elseif(isset($_SESSION['register']) && $_SESSION['register'] == 'failed'): ?>
-                    <strong class="alert_red">Registro fallido, introduce bien los datos</strong>
+                    <script type="text/javascript">
+                        Swal.fire({
+                            position: 'center',
+                            icon: 'error',
+                            title: 'Registro fallido...',
+                            text: 'Introduce bien los datos!',
+                            showConfirmButton: false,
+                            timer: 2250
+                        })
+                    </script>
                 <?php endif; ?>
                 <?php Utils::deleteSession('register'); ?>
-                <br/>
                 <center>
                     <form id="form-register" action="<?=base_url?>O_SuperOyente/empiezaRegistro" method="POST" enctype="multipart/form-data">
                         <label id="label-form" for="nombre">Nombre: </label>

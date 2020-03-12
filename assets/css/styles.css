@@ -51,6 +51,18 @@ a:hover{
     color: #0d073d;
 }
 
+.blue-a{
+    background-color: #0c73f2;
+}
+
+.red-a{
+    background-color: #ea0703;
+}
+
+.green-a{
+    background-color: #14ca14;
+}
+
 .red{
     color: #9b2422 !important;
 
@@ -479,11 +491,56 @@ textarea{
 }
 
 #imagen-sesion{
-    width: 139px;
-    padding-left: 20px;
-    margin-bottom: 7px;
+    width: 155px;
+    padding-left: 12px;
+    margin-bottom: 5px;
 }
 
 #boton-cerrarsesion{
     width: auto;
+}
+
+#select-ui{
+    display: block;
+    width: 325px;
+    margin-bottom: 20px;
+    margin-top: 5px;
+    border-radius: 2px;
+    height: 25px;
+    margin-left: 20px;
+}
+
+/*TABLA DE ESTILOS*/
+table{
+    margin-top: 10px;
+    text-align: center;
+    width: 100%;
+    border-bottom: 1px solid #ccc;
+}
+
+
+td{
+    border-top: 1px solid #ccc;
+    padding: 2px;
+}
+
+#a-tablas{
+    color: white;
+    border: 1px solid gray;
+    font-size: 15px;
+    border-radius: 3px;
+    padding: 3px;
+}
+
+#a-tablas:hover{
+    color: black;
+}
+
+#a-tablas:active{
+    box-shadow: 0px 0px 3px gray inset;
+    text-shadow: 0px 0px 1px #ccc;
+}
+
+#botones-actualizar{
+    margin: 5px;
 }

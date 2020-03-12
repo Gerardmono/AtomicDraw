@@ -5,7 +5,7 @@
         Swal.fire({
             position: 'center',
             icon: 'success',
-            title: 'Noticia guardada correctamente!',
+            title: 'Noticia agregada correctamente!',
             showConfirmButton: false,
             timer: 2250
         })

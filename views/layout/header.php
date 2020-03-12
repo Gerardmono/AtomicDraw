@@ -26,15 +26,24 @@
             <li>
                 <a href="<?=base_url?>">Inicio</a>
             </li>
+            <?php if(isset($_SESSION['usuario']) && $_SESSION['usuario']['typeuser'] == 2) : ?>
             <li>
                 <a href="<?=base_url?>O_SuperOyente/despliegaGUICreacionGUI">Entorno Desarrollo UI´s</a>
             </li>
+            <?php endif; ?>
             <li>
                 <a href="index.html">Biblioteca</a>
-            </li>
+            </li>            
+            <?php if(isset($_SESSION['usuario']) && $_SESSION['usuario']['typeuser'] == 2) : ?>
             <li>
                 <a href="index.html">Interfaces De Usuario</a>
                 <ul>
+                    <li>
+                        <a href="<?=base_url?>O_SuperOyente/despliegaGUIPublicarUI">Publicar</a>
+                    </li>
+                    <li>
+                        <a href="index.html">Actualizar</a>
+                    </li>
                     <li>
                         <a href="index.html">Personales</a>
                     </li>
@@ -43,18 +52,18 @@
                     </li>
                 </ul>
             </li>
+            <?php endif; ?>
             <li>
                 <a href="index.html">Gestion De Noticias</a>
                 <ul>
+                    <?php if(isset($_SESSION['usuario']) && $_SESSION['usuario']['typeuser'] == 1) : ?>
                     <li>
                         <a href="<?=base_url?>O_SuperOyente/delegaNewNotice">Publicar</a>
                     </li>
                     <li>
-                        <a href="index.html">Modificar</a>
+                        <a href="<?=base_url?>O_SuperOyente/beginUpdateNotice">Modificar/Eliminar</a>
                     </li>
-                    <li>
-                        <a href="index.html">Eliminar</a>
-                    </li>
+                    <?php endif; ?>                
                     <li>
                         <a href="index.html">Consultar</a>
                     </li>
