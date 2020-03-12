@@ -1,5 +1,4 @@
 <?php
-    require_once 'models/usuario/GestorInformacion.php';
     require_once 'models/SuperGestor.php';
 
     class O_Contenido{
@@ -37,6 +36,12 @@
 				$_SESSION['register'] = "failed";
 				header("Location:".base_url.'O_SuperOyente/delegaNewNotice');
             }
+        }
+
+        public function delegaUpdateNotice(){
+            $gestor= new SuperGestor();
+            $news= $gestor->delegarUpdateNotice();
+            header("Location:".base_url.'O_SuperOyente/delegaNewNotice');
         }
     }
 ?>

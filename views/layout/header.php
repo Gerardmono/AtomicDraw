@@ -56,10 +56,7 @@
                         <a href="<?=base_url?>O_SuperOyente/delegaNewNotice">Publicar</a>
                     </li>
                     <li>
-                        <a href="index.html">Modificar</a>
-                    </li>
-                    <li>
-                        <a href="index.html">Eliminar</a>
+                        <a href="<?=base_url?>O_SuperOyente/beginUpdateNotice">Modificar/Eliminar</a>
                     </li>
                     <li>
                         <a href="index.html">Consultar</a>

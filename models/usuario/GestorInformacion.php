@@ -35,5 +35,12 @@
 			}
 			return $result; 
         }
+
+        public function updateNews(){
+            $noticia= new Notice(null,null,null,null,null);
+            $sql= "SELECT * FROM noticias ORDER BY id DESC;";
+            $noticia = $this->proxy_noticias->query($sql);         
+			return $noticia;
+        }
     }
 ?>
