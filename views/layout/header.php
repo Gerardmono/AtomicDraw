@@ -36,6 +36,12 @@
                 <a href="index.html">Interfaces De Usuario</a>
                 <ul>
                     <li>
+                        <a href="index.html">Publicar</a>
+                    </li>
+                    <li>
+                        <a href="index.html">Actualizar</a>
+                    </li>
+                    <li>
                         <a href="index.html">Personales</a>
                     </li>
                     <li>
