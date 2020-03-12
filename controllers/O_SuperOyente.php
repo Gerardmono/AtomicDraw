@@ -13,8 +13,8 @@
 			require_once 'views/Gestion_De Sesion/Registro.php';		
 		}
 
-		public function despliegaGUICreacionUI(){
-			require_once 'views/Gestion_De_Biblioteca/Creacion_De_UI.php';		
+		public function despliegaGUICreacionGUI(){
+			require_once 'views/Gestion_De_Biblioteca/Creacion_De_Gui.php';		
 		}
 
 		public function delegaNewNotice(){

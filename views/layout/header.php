@@ -27,7 +27,7 @@
                 <a href="<?=base_url?>">Inicio</a>
             </li>
             <li>
-                <a href="index.html">Entorno Desarrollo UI´s</a>
+                <a href="<?=base_url?>O_SuperOyente/despliegaGUICreacionGUI">Entorno Desarrollo UI´s</a>
             </li>
             <li>
                 <a href="index.html">Biblioteca</a>
