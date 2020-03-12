@@ -41,6 +41,7 @@
         public function delegaUpdateNotice(){
             $gestor= new SuperGestor();
             $news= $gestor->delegarUpdateNotice();
+            header("Location:".base_url.'O_SuperOyente/delegaNewNotice');
         }
     }
 ?>
