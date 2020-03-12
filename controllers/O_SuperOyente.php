@@ -25,6 +25,10 @@
 			require_once 'views/Gestion_De_Contenido/Nueva_Noticia.php';
 		}
 
+		public function despliegaGUIUpdateNotices(){
+			require_once 'views/Gestion_De_Contenido/Gestion_De Noticias.php';
+		}
+
 		public function empiezaRegistro(){
 
 			if( isset($_POST) ){

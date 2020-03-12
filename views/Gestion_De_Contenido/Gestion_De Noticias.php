@@ -1,3 +1,4 @@
+<?php require_once 'views/layout/sidebar.php';?>
 <!--Inicio De Las Secciones-->
 <div id="sections">
             <section id="registro">
@@ -6,27 +7,39 @@
                     <img class="stickerTwo" src="<?=base_url?>assets/img/scotch.png" alt="Pegatina"/>
                 </span>
                 <h2 class="titulo blue">Actualizar Noticias</h2>
-                <br/>
-                <center>
-                    <form id="form-register" action="<?=base_url?>O_SuperOyente/beginNewNotice" method="POST">
-                        <label id="label-form" for="clasificacion">Clasificación: </label>
-                        <input id="input-form" type="text" name="clasificacion"/>
+                <br/>        
 
-                        <label id="label-form" for="titulo">Titulo: </label>
-                        <input id="input-form" type="text" name="titulo"/> 
-                        
-                        <label id="label-form" for="descripcion">Descripción: </label>
-                        <textarea name="descripcion" cols="30" rows="10"></textarea>
-
-                        <label id="label-form" for="fecha">Fecha: </label>
-                        <input id="input-form-date" type="date" name="fecha"/>                     
-                
-                        <div id="submits">
-                            <input id="submit-form" type="submit" value="Enviar">
-                            <input id="submit-form" type="reset" value="Limpiar">
-                        </div>
-                    </form>
-                </center>                
+                <table>
+                    <tr>
+                        <td><strong>ID</strong></td>
+                        <td><strong>CLASIFICACION</strong></td>
+                        <td><strong>TITULO</strong></td>
+                        <td><strong>DESCRIPCION</strong></td>
+                        <td><strong>FECHA</strong></td>
+                        <td><strong></strong></td>
+                        <td><strong></strong></td>
+                    </tr>
+                    <?php while($noticia = $news->fetch_object()): ?>
+                        <tr>
+                            <td><?=$noticia->id?></td>
+                            <td><?=$noticia->clasificacion?></td>
+                            <td><?=$noticia->titulo?></td>
+                            <td><?=$noticia->descripcion?></td>
+                            <td><?=$noticia->fecha?></td>                            
+                            <td>
+                            <form action="<?=base_url?>O_SuperOyente/empiezaCerrarSesion" method="post">
+                                <input class="red-input" type="submit" value="Modificar"/>
+                            </form>
+                            </td>
+                            <td>
+                                <div id="boton-actualizar">
+                                    <a href="<?=base_url?>OAutobuses/eliminarBus&id=<?=$noticia->id?>" id="a-table">Eliminar</a>
+                                </div>
+                            </td>
+                        </tr>
+                    <?php endwhile; ?>
+                </table>
+              
             </section>
         </div>
         <!--Fin De Las Secciones-->

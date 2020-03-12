@@ -497,3 +497,17 @@ textarea{
     height: 25px;
     margin-left: 20px;
 }
+
+/*TABLA DE ESTILOS*/
+table{
+    margin-top: 10px;
+    text-align: center;
+    width: 100%;
+    border-bottom: 1px solid #ccc;
+}
+
+
+td{
+    border-top: 1px solid #ccc;
+    padding: 2px;
+}
