@@ -29,11 +29,11 @@
             <?php if(isset($_SESSION['usuario']) && $_SESSION['usuario']['typeuser'] == 2) : ?>
             <li>
                 <a href="<?=base_url?>O_SuperOyente/despliegaGUICreacionGUI">Entorno Desarrollo UI´s</a>
-            </li>
-            <?php endif; ?>
+            </li>            
             <li>
                 <a href="index.html">Biblioteca</a>
-            </li>            
+            </li>
+            <?php endif; ?>            
             <?php if(isset($_SESSION['usuario']) && $_SESSION['usuario']['typeuser'] == 2) : ?>
             <li>
                 <a href="index.html">Interfaces De Usuario</a>
@@ -69,12 +69,14 @@
                     </li>
                 </ul>
             </li>
+            <?php if(isset($_SESSION['usuario']) && $_SESSION['usuario']['typeuser'] == 2) : ?>
             <li>
                 <a href="index.html">Proyectos</a>
             </li>
             <li>
                 <a href="index.html">Reseñas</a>
             </li>
+            <?php endif; ?>
             <li>
                 <a href="index.html">Blog</a>
             </li>
