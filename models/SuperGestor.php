@@ -27,6 +27,13 @@
             return $numeroUsers;
         }
 
+        public function delegarUpdateNotice(){
+            require_once 'usuario/GestorInformacion.php';
+            $gestor= new GestorInformacion();
+            $news= $gestor->updateNews();
+            return $news;
+        }
+
     }
 
 ?>

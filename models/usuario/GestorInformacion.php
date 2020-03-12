@@ -35,5 +35,9 @@
 			}
 			return $result; 
         }
+
+        public function updateNews(){
+            
+        }
     }
 ?>
