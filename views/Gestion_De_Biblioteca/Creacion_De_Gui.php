@@ -18,9 +18,9 @@
                 <div id="frame">
                 </div>
             </div>
-            <div class="col-2" style="background-color: white">
+            <div class="col-2" style="background-color: white; border-radius: 5px; margin-top: 30px;">
                 <div class="row">
-                    <strong>&nbsp;&nbsp;Componentes</strong>
+                    <strong>&nbsp;&nbsp;Paleta De Componentes</strong>
                 </div>
 
                 <img src="https://cdn.iconscout.com/icon/premium/png-256-thumb/title-title-tage-labal-sign-direction-3-53162.png" width="25px">
@@ -42,7 +42,7 @@
             </div>
         </div>
     </section>
-
+    <div class="clearfix"></div>
 </body>
 
 <input type="hidden" data-toggle="modal" data-target="#exampleModalCenter" id="openModal">
@@ -109,7 +109,7 @@
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
     <script src="../workSpace.js"></script>
     <script src="../jquery.growl.js"></script>
-
+    
     <!-- https://lh3.googleusercontent.com/proxy/6VlCCY7OW81Q4tZ2SNiuxjhjEBLDovgXWk0X1STY8mTvOPs1FacsM0EJteqnU8Q9AQvfMDBw1XMUz_TEnQfumj7bMTde3v9WL33_O_Z-C2mDOKy1S5ar -->
 
 </html>
