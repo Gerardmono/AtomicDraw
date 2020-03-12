@@ -91,5 +91,9 @@
 
 
 		}
+
+		public function beginUpdateNotice(){
+			header("Location:".base_url.'O_Contenido/delegaUpdateNotice');
+		}
 	}
 ?>
