@@ -124,5 +124,25 @@
                 header("Location:".base_url.'O_SuperOyente/despliegaGUIPublicarUI');
             }
         }
+
+        public function endDeleteNew(){
+            if(isset($_SESSION['id'])){
+                $id=$_SESSION['id'];
+                $gestor= new SuperGestor();
+                $new=$gestor->delegarDeleteNew($id);
+
+                if ($new) {
+                    Utils::borrarSesionId();
+                    $_SESSION['register'] = "complete";
+                }else{
+                    Utils::borrarSesionId();
+                    $_SESSION['register'] = "failed";
+                }
+            }else{
+                Utils::borrarSesionId();
+				$_SESSION['register'] = "failed";
+            }
+            header("Location:".base_url.'O_Contenido/delegaUpdateNotice');
+        }
     }
 ?>

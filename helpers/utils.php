@@ -38,6 +38,10 @@ class Utils{
 		Utils::deleteSession('passwordConfirm');
 	}
 
+	public static function borrarSesionId(){
+		utils::deleteSession('id');
+	}
+
 	public static function borrarSesionNotice(){
 		Utils::deleteSession('clasificacion');
 		Utils::deleteSession('titulo');
