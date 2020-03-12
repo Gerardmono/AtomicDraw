@@ -14,7 +14,6 @@
                         <td><strong>ID</strong></td>
                         <td><strong>CLASIFICACION</strong></td>
                         <td><strong>TITULO</strong></td>
-                        <td><strong>DESCRIPCION</strong></td>
                         <td><strong>FECHA</strong></td>
                         <td><strong></strong></td>
                         <td><strong></strong></td>
@@ -24,16 +23,15 @@
                             <td><?=$noticia->id?></td>
                             <td><?=$noticia->clasificacion?></td>
                             <td><?=$noticia->titulo?></td>
-                            <td><?=$noticia->descripcion?></td>
                             <td><?=$noticia->fecha?></td>                            
                             <td>
-                            <form action="<?=base_url?>O_SuperOyente/empiezaCerrarSesion" method="post">
-                                <input class="red-input" type="submit" value="Modificar"/>
-                            </form>
+                                <div id="botones-actualizar">
+                                    <a class="blue-a" id="a-tablas" href="<?=base_url?>OAutobuses/eliminarBus&id=<?=$noticia->id?>">Modificar</a>
+                                </div>                                
                             </td>
                             <td>
                                 <div id="boton-actualizar">
-                                    <a href="<?=base_url?>OAutobuses/eliminarBus&id=<?=$noticia->id?>" id="a-table">Eliminar</a>
+                                    <a class="red-a" id="a-tablas" href="<?=base_url?>OAutobuses/eliminarBus&id=<?=$noticia->id?>">Eliminar</a>
                                 </div>
                             </td>
                         </tr>

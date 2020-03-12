@@ -42,5 +42,17 @@
             $noticias = $this->proxy_noticias->query($sql);         
 			return $noticias;
         }
+
+        public function deleteNew($id){
+			$noticia= new Notice($id,null,null,null,null);
+			$sql = "DELETE FROM noticias WHERE id={$noticia->getId()}";
+		 	$delete = $this->db->query($sql);
+
+		 	$result = false;
+			if ($delete) {
+				$result = true;
+			}
+			return $result;
+		}
     }
 ?>
