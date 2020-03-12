@@ -50,6 +50,14 @@ class Utils{
 		Utils::deleteSession('passwordLogin');
 	}
 
+	public static function borrarSesionesPublicacion(){
+		Utils::deleteSession('file');
+		Utils::deleteSession('titulo');
+		Utils::deleteSession('id-ui');
+		Utils::deleteSession('descripcion');
+		Utils::deleteSession('precio');
+	}
+
 	public static function validaNombre($nombre){
 		if( !empty($nombre) && !is_numeric($nombre) && !preg_match("/[0-9]/", $nombre) ){
 			$nombre_validado = true;

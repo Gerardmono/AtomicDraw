@@ -34,6 +34,10 @@
             return $news;
         }
 
+        public function delegaGuardarPublicacion($titulo, $precio, $id_ui, $descripcion, $filename){
+
+        }
+
     }
 
 ?>
