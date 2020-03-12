@@ -98,14 +98,14 @@
 					}
 
 				}else{
-					//Registro fallido, aun esta pendiente
+					//Registro fallido
 					Utils::borrarSesionesRegistro();
 					$_SESSION['register'] = "failed";
 					header("Location:".base_url.'O_SuperOyente/despliegaUIRegistro');
 				}
 
 			}else{
-				//Registro fallido, aun esta pendiente
+				//Registro fallido
 				Utils::borrarSesionesRegistro();
 				$_SESSION['register'] = "failed";
 				header("Location:".base_url.'O_SuperOyente/despliegaUIRegistro');

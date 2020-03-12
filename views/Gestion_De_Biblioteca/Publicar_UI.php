@@ -34,7 +34,7 @@
                 <h2 class="titulo blue">Crear publicacion para Interfaz de usuario.</h2>
                 <br/>
                 <center>
-                    <form id="form-register" action="<?=base_url?>O_SuperOyente/empiezaCrearPublicacion" method="POST">
+                    <form id="form-register" action="<?=base_url?>O_SuperOyente/empiezaCrearPublicacion" method="POST" enctype="multipart/form-data">
                         
                         <label id="label-form" for="titulo">Nombre de la UI: </label>
                         <input id="input-form" type="text" name="titulo"/>
