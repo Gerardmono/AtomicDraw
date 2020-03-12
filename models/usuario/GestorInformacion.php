@@ -10,10 +10,23 @@
             $this->proxy_noticias= Database::connect();
         }
 
+        public function getSomeNewsAtomic(){
+            $noticia= new Notice(null,null,null,null,null);
+            $sql= "SELECT * FROM noticias WHERE clasificacion='Atomic Draw' ORDER BY id DESC LIMIT 4;";
+            $noticias = $this->proxy_noticias->query($sql);            
+			return $noticias;
+        }
+
+        public function getSomeNewsEntorno(){
+            $noticia= new Notice(null,null,null,null,null);
+            $sql= "SELECT * FROM noticias WHERE clasificacion='Entorno' ORDER BY id DESC LIMIT 4;";
+            $noticias = $this->proxy_noticias->query($sql);            
+			return $noticias;
+        }
+
         public function saveNotice($id,$clasificacion,$titulo,$descripcion,$fecha){
             
-            $noticia= new Notice($id,$clasificacion,$titulo,$descripcion,$fecha); 
-            var_dump($noticia);         
+            $noticia= new Notice($id,$clasificacion,$titulo,$descripcion,$fecha);       
             $sql = "INSERT INTO noticias VALUES (NULL, '{$noticia->getClasificacion()}', '{$noticia->getTitulo()}','{$noticia->getDescripcion()}', '{$noticia->getFecha()}'); ";
             $save = $this->proxy_noticias->query($sql);
 			$result = false;

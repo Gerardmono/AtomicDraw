@@ -1,4 +1,5 @@
 <?php
+require_once 'models/usuario/GestorInformacion.php';
 
 class Utils{
 	//Metodo estaticos que no necesitan instanciar el objeto o crear objeto, solo llamar los metodos
@@ -67,6 +68,18 @@ class Utils{
 			$_SESSION['register'] = "failed";
 		}
 		return $email_validado;
+	}
+
+	public static function getNewsAtomic(){
+		$gestor= new GestorInformacion();
+		$news= $gestor->getSomeNewsAtomic();
+		return $news;
+	}
+
+	public static function getNewsEntorno(){
+		$gestor= new GestorInformacion();
+		$news= $gestor->getSomeNewsEntorno();
+		return $news;
 	}
 
 }
