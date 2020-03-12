@@ -1,6 +1,6 @@
 <?php require_once 'views/layout/sidebar.php';?>
 
-<?php if (isset($_SESSION['register']) && $_SESSION['register'] == 'complete') : ?> 
+<?php if (isset($_SESSION['publicacion']) && $_SESSION['publicacion'] == 'complete') : ?> 
     <script type="text/javascript">
         Swal.fire({
             position: 'center',
@@ -10,7 +10,7 @@
             timer: 2250
         })
     </script>
-<?php elseif(isset($_SESSION['register']) && $_SESSION['register'] == 'failed'): ?>
+<?php elseif(isset($_SESSION['publicacion']) && $_SESSION['publicacion'] == 'failed'): ?>
     <script type="text/javascript">
         Swal.fire({
             position: 'center',
@@ -22,7 +22,7 @@
         })
     </script>
 <?php endif; ?>
-<?php Utils::deleteSession('register'); ?>
+<?php Utils::deleteSession('publicacion'); ?>
 
 <!--Inicio De Las Secciones-->
 <div id="sections">
@@ -34,7 +34,7 @@
                 <h2 class="titulo blue">Crear publicacion para Interfaz de usuario.</h2>
                 <br/>
                 <center>
-                    <form id="form-register" action="<?=base_url?>O_SuperOyente/beginNewNotice" method="POST">
+                    <form id="form-register" action="<?=base_url?>O_SuperOyente/empiezaCrearPublicacion" method="POST">
                         
                         <label id="label-form" for="titulo">Nombre de la UI: </label>
                         <input id="input-form" type="text" name="titulo"/>
