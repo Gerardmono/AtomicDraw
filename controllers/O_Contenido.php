@@ -100,7 +100,17 @@
                         $superGestor= new SuperGestor();
                         $result= $superGestor->delegaGuardarPublicacion($titulo, $precio, $id_ui, $descripcion, $filename);
     
-                    
+                        if ($result) {
+                            Utils::borrarSesionesPublicacion();
+                            $_SESSION['publicacion'] = "complete";
+                            header("Location:".base_url.'O_SuperOyente/despliegaGUIPublicarUI');
+                        }else{
+                            Utils::borrarSesionesPublicacion();
+                            $_SESSION['publicacion'] = "failed";
+                            header("Location:".base_url.'O_SuperOyente/despliegaGUIPublicarUI');
+                        }
+
+
                 }else{
                     // Crear publicacion fallido
                     Utils::borrarSesionesPublicacion();

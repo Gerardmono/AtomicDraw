@@ -35,7 +35,14 @@
         }
 
         public function delegaGuardarPublicacion($titulo, $precio, $id_ui, $descripcion, $filename){
+            require_once 'biblioteca/GestorContenido.php';
+            require_once 'biblioteca/Publicacion.php';
 
+            $publicacionNueva= new Publicacion($titulo, $precio, $id_ui, $descripcion, $filename);
+
+            $gestorContenido= new GestorContenido();
+            $result= $gestorContenido->guardarPublicacion($publicacionNueva);
+            return $result;
         }
 
     }
