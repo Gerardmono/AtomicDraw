@@ -34,6 +34,13 @@
             return $news;
         }
 
+        public function delegarDeleteNew($id){
+            require_once 'usuario/GestorInformacion.php';
+            $gestor= new GestorInformacion();
+            $result=$gestor->deleteNew($id);
+            return $result;
+        }
+
         public function delegaGuardarPublicacion($titulo, $precio, $id_ui, $descripcion, $filename){
 
         }

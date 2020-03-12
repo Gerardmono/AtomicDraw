@@ -1,4 +1,30 @@
 <?php require_once 'views/layout/sidebar.php';?>
+
+<?php if (isset($_SESSION['register']) && $_SESSION['register'] == 'complete') : ?> 
+    <script type="text/javascript">
+        Swal.fire({
+            position: 'center',
+            icon: 'success',
+            title: 'Noticia eliminada correctamente!',
+            showConfirmButton: false,
+            timer: 2250
+        })
+    </script>
+<?php elseif(isset($_SESSION['register']) && $_SESSION['register'] == 'failed'): ?>
+    <script type="text/javascript">
+        Swal.fire({
+            position: 'center',
+            icon: 'error',
+            title: 'Lo sentimos...',
+            text: 'No se pudo eliminar la noticia!',
+            showConfirmButton: false,
+            timer: 2250
+        })
+    </script>
+<?php endif; ?>
+<?php Utils::deleteSession('register'); ?>
+
+
 <!--Inicio De Las Secciones-->
 <div id="sections">
             <section id="registro">
@@ -26,12 +52,12 @@
                             <td><?=$noticia->fecha?></td>                            
                             <td>
                                 <div id="botones-actualizar">
-                                    <a class="blue-a" id="a-tablas" href="<?=base_url?>OAutobuses/eliminarBus&id=<?=$noticia->id?>">Modificar</a>
+                                    <a class="blue-a" id="a-tablas" href="<?=base_url?>O_SuperOyente/eliminarBus&id=<?=$noticia->id?>">Modificar</a>
                                 </div>                                
                             </td>
                             <td>
                                 <div id="boton-actualizar">
-                                    <a class="red-a" id="a-tablas" href="<?=base_url?>OAutobuses/eliminarBus&id=<?=$noticia->id?>">Eliminar</a>
+                                    <a class="red-a" id="a-tablas" href="<?=base_url?>O_SuperOyente/beginDeleteNew&id=<?=$noticia->id?>">Eliminar</a>
                                 </div>
                             </td>
                         </tr>

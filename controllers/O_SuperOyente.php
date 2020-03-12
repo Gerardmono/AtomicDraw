@@ -13,6 +13,7 @@
 			require_once 'views/Gestion_De Sesion/Registro.php';		
 		}
 
+
 		public function despliegaGUICreacionGUI(){
 			require_once 'views/Gestion_De_Biblioteca/Creacion_De_Gui.php';		
 		}
@@ -133,6 +134,16 @@
 				header("Location:".base_url.'O_SuperOyente/despliegaGUIPublicarUI');
 			}
 		
+		}
+
+		public function beginDeleteNew(){
+			if(isset($_GET['id'])){
+				$_SESSION['id']=$_GET['id'];
+				header("Location:".base_url.'O_Contenido/endDeleteNew');
+			}else{	
+				$_SESSION['register'] = "failed";
+				header("Location:".base_url.'O_SuperOyente/delegaNewNotice');
+			}
 		}
 		
 	}
