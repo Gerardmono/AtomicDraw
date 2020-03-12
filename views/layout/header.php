@@ -36,7 +36,7 @@
                 <a href="index.html">Interfaces De Usuario</a>
                 <ul>
                     <li>
-                        <a href="index.html">Publicar</a>
+                        <a href="<?=base_url?>O_SuperOyente/despliegaGUIPublicarUI">Publicar</a>
                     </li>
                     <li>
                         <a href="index.html">Actualizar</a>

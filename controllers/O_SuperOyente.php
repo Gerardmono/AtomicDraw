@@ -17,6 +17,10 @@
 			require_once 'views/Gestion_De_Biblioteca/Creacion_De_Gui.php';		
 		}
 
+		public function despliegaGUIPublicarUI(){
+			require_once 'views/Gestion_De_Biblioteca/Publicar_UI.php';		
+		}
+
 		public function delegaNewNotice(){
 			require_once 'views/Gestion_De_Contenido/Nueva_Noticia.php';
 		}
